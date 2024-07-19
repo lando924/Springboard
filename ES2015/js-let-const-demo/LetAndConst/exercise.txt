@@ -1,0 +1,7 @@
+var creates a variable where it's part of the global/function scope and gets hoisted.
+let creates a variable that is block scoped.
+
+const can't be reassigned or redeclared, it can only be mutated.
+var can be all of those things.
+
+hoisting can lift variables to the top of the scope.
