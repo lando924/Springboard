@@ -1,0 +1,14 @@
+body {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+span {
+    font-size: 15rem;
+}
+
+.letter{
+    transition: color 500ms;
+}

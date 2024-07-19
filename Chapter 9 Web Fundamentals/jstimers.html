@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Timers</title>
+    <link rel="stylesheet" href="jstimers.css">
+</head>
+<body>
+    <p><bold>Goals</bold>
+    <li class="italic">Learn JS treats functions as first-class data types</li>
+    <li>Introduce callback functions</li>
+    <li>Explore a pattern for using callbacks to write declartive code</li>
+    <li>Introduce Anonymous functions</li>
+    <li>Understand the difference between synchronous and asynchronous code</li>
+    <li>Learn about setTimeout and setInterval</li>
+   
+    First Class Functions (Functions are Objects)
+    <ul>
+        <li> Functions in JS are first-class because of the following 3 features:
+            <ol>
+                <li>functions can be passed as arguments to other functions</li>
+                <li>the return value of a function can be another function</li>
+                <li>function can be assigned to a variable</li>
+                
+            </ol>
+        </li>
+        <li> Anonymous Functions and Function Expressions
+            <ol>
+                <li>Anonymous function is a function without a name</li>
+                <li>function expression is a function that is assigned to a variable</li>
+                <li>These types of functions can be passed as arguments, returned from a function, and stored in a variable.</li>
+            </ol>
+        </li>
+        <li>Synchronous and Asynchronous Code
+            <ol>
+                <li>Synchronous code is executed in sequence – each statement waits for the previous statement to finish before executing.</li>
+                <li>Asynchronous code doesn't have to wait – your program can continue to run. You do this to keep your site or app responsive, reducing waiting time in situations where you can't predict the time something will take to complete.</li>
+            </ol>
+        </li>
+        <li>setTimeout and setInterval Methods
+            <ol>
+                <li>setTimeout and setInterval are built-in methods in JavaScript used for scheduling tasks.
+                </li>
+                <li>setTimeout allows you to schedule a task to run after a delay.</li>
+                <li>setInterval allows you to schedule a task to run at regular intervals.</li>
+            </ol>
+        </li>
+        <li> You can execute Functions within Functions by ()() or put in variable
+            <ol>Examples are in script.
+        </li>
+        <br>
+        <li>Threading in JS
+            <ol>Single Threaded
+                <li>represents a single process</li>
+                <li>one thing at a time</li>
+            </ol>
+            <ol>Multi Threaded
+                <li>mulitple processes at one time</li>
+            </ol>
+        </li>
+        <li>setTimeout
+            <ol>write code that we want to be executed after a specific amount of time
+                <li>perform some animation on page after time has elapsed</li>
+                <li>keeps track of 3 seconds handing it off to the browser</li>
+                
+            </ol>
+        </li>
+        <li>setInterval
+            <ol>will continously perform function in specified time until cleared out
+                
+            </ol>
+        </li>
+        <li>Call Stack
+            <ol><a href "http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D">What happens in call stack.</a>
+                <li>The call stack in JavaScript is essentially its to-do list. It's the structure where JavaScript keeps track of what it's been working on, what's incomplete, and what it needs to do next. Things are added to the call stack one by one and then removed as they are completed. It's like a task manager that JavaScript looks to, to figure out what it should do next.</li>
+            </ol>
+        </li>
+        <li>Anonymous Functions
+            <ol>
+                <li>function that does not have a name. These functions are often used as arguments to other functions. They can be stored in variables or passed to other functions. They are called anonymous because they do not have a name of their own, and cannot be called again unless stored in a variable.</li>
+            </ol>
+        </li>
+        <li>Function Statements and Funtion Expressions</li>
+            <ol>
+                <li>A function statement in JavaScript is a standalone function with a name, defined using the function keyword. A function expression, on the other hand, is a function that is assigned to a variable. The function in a function expression can be anonymous, meaning it does not have a name of its own.</li>
+            </ol>
+    </ul>
+
+    </p>
+
+<script src="jstimers.js"></script>
+</body>
+</html>

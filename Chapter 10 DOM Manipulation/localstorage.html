@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>localStorage</title>
+    <link rel="stylesheet" href="localstorage.css">
+</head>
+<body class="dark">
+
+    <div>
+        <input type="checkbox" id="toggle-btn">
+        <label for="toggle-btn"></label>
+    </div>
+
+    <h1><bold>Goals</bold></h1>
+    <ul>
+        <li>Utilize localStorage to save information in the browser</li>
+        <li>Compare and contrast localStorage and sessionStorage</li>
+        <li>Add and remove primitives to/from localStorage</li>
+        <li>Add and remove objects to/from localStorage</li>
+        
+    </ul>
+
+    <h3>localStorage</h3>
+    <p><bold>What is an localStorage?</bold>
+    localStorage is a mechanism for storing information in the browser for a specific domain. The API is quite easy to use and very minimal.
+    </p>
+    <ul>localStorage vs sessionStorage
+        <li>data stored in localStorage has no expiration time</li>
+        <li>data stored in sessionStorage gets cleared when the browsing session ends</li>
+        <li>treat it as a database.</li>
+    </ul>
+    <p></p>
+
+    <h3>modifying localStorage</h3>
+    <ul>Get Set Item
+        <li>setItem method. string form of object. key and a value</li>
+        <li>getItem, is how we retrieve information. pass in a key and retrieve whatever matches with the key</li>
+        <li>parseInt if you want to make value into a number</li>
+        <li>removeItem to remove key/value</li>
+        <li>localStorage.clear clears everything</li>
+    </ul>
+    <p></p>
+   
+    <h3>JSON adding Objects to localStorage</h3>
+    <ul>
+        <li>if working with an object or array you have to parse into string when in localStorage</li>
+        <li>In order to get back our original data type we need to convert this arraty to a special string format called JSON</li>
+        <li>JSON (JavaScript Object Notation) is a lightweight data-interchange format. It is easy for humans to read and write. easy for machines to parse and generate</li>
+        <li>JSON.stringify-converts JavaScript to JSON or stringify</li>
+        <li>JSON.parse parses a string as JSON</li>
+        <li>convert it to store it, parse it to retrieve it</li>
+
+    </ul>
+    <p></p>
+
+    
+    <h3>Recap</h3>
+    <ul>
+        <li>localStorage is useful for storing info in browser</li>
+        <li>store objects, use JSON.stringify when setting JSON.parse to retrieve</li>
+        <li>if you want to store info for the time a tab is open, use sessionStorage</li>
+    </ul>
+    <p></p>
+
+
+    
+
+
+<script src="localstorage.js"></script>
+</body>
+</html>

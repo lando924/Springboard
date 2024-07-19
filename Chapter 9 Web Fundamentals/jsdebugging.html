@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debugging Practice</title>
+</head>
+<body>
+    <h1>How to Debug!</h1>
+    <h3>Open up the console my guy...</h3>
+
+    <p>
+        <ol><strong>Goals</strong>
+        <li>Define 3 of the most common errors in JS and how to debug them.</li>
+        <li>Examine the Chrome Dev Tools for debugging</li>
+        <li>Catch errors using try/catch/finally blocks</li>
+        <li>Throw errors with specific messages</li>
+    </ol>
+    </p>
+    <br>
+
+    <ul><small>Common Errors</small>
+        <li>SyntaxError</li>
+        <li>ReferenceError</li>
+        <li>TypeError</li>
+    </ul>
+<p>Syntax Error: 
+    type something incorrect that JS doesn't understand.
+    Example, 3 + ;4
+</p>
+<p>
+    ReferenceError:
+    thrown when you try to access a variable that is not defined
+    that means undefined
+    Example: common in scope issue, scripts are out of order
+</p>
+<p>
+    TypeError:
+<ul>
+    <li>trying to do something with a type that you can not</li>
+    <li>Accessing properties on undefined or null</li>
+    <li>Invoking ("calling") something that is not a function</li>
+</ul>
+    Example, 5(); "hello".splice() is a TypeError:
+</p>
+<p>
+    Two Kinds of Bugs
+    An error is thrown - easier
+    You didn't get what you wanted - harder!
+</p>
+<p>
+    A process for debugging:
+    <ul>
+        <li>Make assumptions</li>
+        <li>Test assumptions</li>
+        <li>Prove assumptions</li>
+        <li>Repeat</li>
+    </ul>
+
+    console.log
+    <li>Be mindful about what you print out</li>
+    <li>Look at JS for console.log examples</li>
+    <br>
+    JavaScript Debugger
+    <li>Watch execution of code and examine at any point</li>
+    <li>Built into Chrome (other browsers have similar abilites)</li>
+    <li>Can debug in-browser code or Node</li>
+
+    Chrome Debugger
+    <li>Sources, click on file</li>
+    <li>debugger; </li>
+</p>
+
+Tips To Avoid Bugs
+<li>Plan First</li>
+<li>Keep It Simple</li>
+
+Error Handling
+<li>Sometimes errors can not be avoided. ie. Database might not exist</li>
+<li>Common when working with external API's other people's data</li>
+<li>Example - Connection Failures</li>
+
+Try/Catch
+<li><bold>try</bold> and <bold>catch</bold> create block scope, so if you define a variable inside using let or const it will only exist in that block.</li>
+<li>The parameter to catch is optional, but we highly recommend using it so you can see what the error is</li>
+<li>use it in </li>
+
+finally
+<li>try/catch blocks come with another optional keyword <bold><em>finally</em></bold></li> which will execute code regardless if an error is thrown or not.
+<br>
+THROWING ERRORS
+<li>any time you want to hide errors from user</li>
+<li>any time you want to produce custom erros for your users' beneift</li>
+<li>anticipate errors where they could occur</li>
+<li>this.message; this.name</li>
+<hr>
+<footer>
+<a href="https://lessons.springboard.com/Debugging-Errors-72d7e738680244e08b6792e62d30a9370">SpringBoard Link</a>
+    <script src="jsdebugging.js"></script>
+</footer>
+</body>
+</html>

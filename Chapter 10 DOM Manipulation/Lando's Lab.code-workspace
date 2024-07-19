@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"name": "Springboard",
+			"path": ".."
+		},
+		{
+			"name": "Kingdom Moving",
+			"path": "../../Kingdom Moving"
+		},
+		{
+			"path": "../../50 Projects 50 Days"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "50 Projects 50 Days"
+	}
+}

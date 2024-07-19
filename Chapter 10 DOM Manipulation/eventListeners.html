@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Events</title>
+    <link rel="stylesheet" href="eventListeners.css">
+</head>
+<body>
+<!-- <h1>Events!</h1>
+
+<h3>Inline onclick:</h3>
+<button onclick="makeBody('purple')">Click Bait</button>
+<button ondblclick="alert('(||)')">Press twice pussy...</button>
+
+<h3>JS onclick:</h3>
+<button id = "teal">Change to Teal</button>
+
+<h3>addEventListener</h3>
+<button id="poop">Poop Button!</button> -->
+<!-- 
+<h3>Load Events!</h3>
+<button id ="btn">Grope Me!</button>
+<br>
+<img width = "600px" src="data:image/jpeg;base64,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">
+ -->
+<!-- 
+<h1>Event Object</h1>
+<p>Click me! <bold>I AM BOLD</bold></p> -->
+
+
+
+<!-- Logo Creator Project -->
+<!-- <h1><bold>Logo Creator!</bold></h1>
+<p>The easy way to make lazy logos!</p>
+
+
+<form action="" id="form">
+<p>
+<strong>
+    <label for="name" id="brandname">
+    Your Brand Name: 
+    </label>
+    <input type="text" id="name" placeholder="Let's Try It">
+    
+</strong>
+<br>
+<strong>
+
+
+    <label for="color" id="brandcolor">
+    Your Brand Color: 
+    <input type="color" id="color">    
+    </label>    
+
+</strong>
+<br>
+<strong>
+    <label for="range" id="brandsize">
+    Logo Font Size: 
+    <input type="range" id="range">
+    </label> 
+</strong>
+<input type="submit">
+<br>
+</p>
+</form>
+
+<section id="result"></section> -->
+
+<!-- 
+<h1>Key Events</h1>
+
+    <input type = "text">
+    <section id="results"></section> -->
+
+<!-- 
+<h1>Adding Multiple Event Listeners</h1>
+
+<form action = "" id = "add-friend">
+    <label for="first-name">First Name</label>
+    <input type = "type" id = "first-name">
+    <button>Add Friend</button>
+</form>
+<ul id="friend-list">
+    <li class="best-friend">Nappy <button>Remove</button></li>
+    <li>Juan <button>Remove</button></li>
+    <li><span>&#9786;</span>Katy <button>Remove</button></li>
+</ul> -->
+
+<!-- Data Attributes -->
+<!-- <ul id = "cars">
+    <li data-id = "1234" data-model="model 3" data-year="2020" data-color="black">Tesla</li>
+    <li data-id = "3421" data-model="mustang" data-year="2019" data-color="yello">Ford</li>
+    <li data-id = "5311" data-model="camry" data-year="2013" data-color="red">Toyota</li>
+    <li data-id = "2455" data-model="accord" data-year="2003" data-color="white">Honda</li>
+</ul> -->
+
+<!-- Color Palette -->
+<section id="colors">
+<button data-hex="#98fb98">Mint Leaf</button>
+<button data-hex="#ffeaa7">Robin's Egg</button>
+<button data-hex="#fd79a8">Pink Glamour</button>
+<button data-hex="#a29bfe">Exodus Fruit</button>
+</section>
+
+    <script src="eventListeners.js">    </script>
+</body>
+</html>

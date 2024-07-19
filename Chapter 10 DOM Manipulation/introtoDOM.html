@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro to DOM</title>
+<link rel="stylesheet" href="introtoDOM.css">
+</head>
+<body>
+    <bold><h1>Goals</h1>
+    <ul><bold>DOM</bold>
+        <li>Document Object Model</li>
+        <li>Structure of DOM uses something called a tree, where the topmost node is the document object.</li>
+        <li>Finding elements</li>
+        <li>making new elements</li>
+        <li>updating elements</li>
+        <li>listening for events like clicks</li>
+        <li>console.log(dir)</li>
+    </ul>
+    <p><bold>getElementById</bold></p>
+    <ul>Selecting Elements in DOM
+        <li>Selecting elements in the DOM is the first step to manipulating a web document. This is done through the document object, which contains properties and methods used to find and update elements, add events, and more. All methods for selecting elements are based in the document object and start with 'document dot something'.</li>
+        <li>The 'document.getElementById' method is used to retrieve an element based on its id. It finds the first matching element. With an id, there should only be one element with a given id on the page. If there were two elements with the same id, it would return the first one. The id is case-sensitive.</li>    
+    </ul>
+    <ul>HTML Element Objects
+        <li>When an element is selected from the DOM, it is returned as an object not a string.</li>
+        <li></li>
+    </ul>
+    <p><bold>getElementByTagName</bold></p>
+    <ul>Selecting Elements in DOM
+        <li>Can't use array methods but can loop through elements</li>    
+    </ul>
+    <p><bold>getElementByClassName</bold></p>
+    <ul>
+        <li>seperate them by putting a space between when selecting multiple</li>    
+    </ul>
+    <p><bold>querySelector</bold></p>
+    <ul>accepts a string which is a valid CSS selector
+        <li>document.querySelector("main")</li>    
+        <li>document.querySelectorAll("main")</li>    
+        <li>document.querySelectorAll("body > hr") direct descendents of body </li>    
+    </ul>
+   
+<script src="introtoDOM.js"></script>
+</body>
+</html>

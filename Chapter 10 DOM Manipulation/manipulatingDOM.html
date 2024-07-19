@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulating DOM</title>
+    <link rel="stylesheet" href="manipulatingDOM.css">
+</head>
+<body>
+
+    <h1 style="color: purple;">Goals</h1>
+    <ul>
+        <li>Modify text and HTML of elements using innerText and innerHTML</li>
+        <li>Change inline styling of an element using the style object</li>
+        <li>Modify attributes using getAttribute and setAttribute</li>
+        <li>Traverse, create, append and remove elements from the DOM</li>
+    </ul>
+
+    <h3>Recap</h3>
+    <ul>
+        <li>querySelector</li>
+        <li>querySelectorAll</li>
+        <li>getElementById</li>
+        <li>getElementsByClassName</li>
+        <li>getElementsByTagName</li>
+    </ul>
+    <p></p>
+
+    <h3>innerText</h3>
+    <ul>
+        <li>easiest way to access the text of an element</li>
+        <li>innerText is aware of the rendered appearance of text, while textContent is not</li>
+        <li>textContent gets the content of all elements including script and style elements.</li>
+        <li>textContent, select something and modify. Inners of all text not what's</li>
+        <li>content inside an element, innerText can be a bit less performant than textContent</li>
+    </ul>
+    <p>User innerText to access readable text that is seen on webpage</p>
+
+    <h3>innerHTML</h3>
+    <ul>
+        <li>access all contents of a given element in HTML</li>
+        <li>we get everything inside of element inlcuding tags</li>
+        <li>document.querySelector.HTML;</li>
+        <li>you can edit like inserting an img</li>
+    </ul>
+    <p></p>    
+    
+    <h3>Styling</h3>
+    <ul>
+        <li>you can access any inline CSS property using the style property</li>
+        <li>only inline styles not within stylesheet</li>
+        <li>need to write inline styles in camelCase </li>
+    </ul>
+    <p></p>
+    
+    <h3>Changing Multiple Elements</h3>
+    <ul>
+        <li>we need to loop over multiple elements</li>
+        <li>for of loops</li>
+        <li>inline styles, make sure it's in quotes and camelcase</li>
+        <li>look at randomColors files in Chapter 10</li>
+    </ul>
+    <p></p>
+    
+    <h3>getAttribute + setAttribute</h3>
+    <ul>
+        <li>3rd most common.</li>
+        <li>parts of a html element like src, href, class, type, id, type, value</li>
+        <li>access an attribute on an element, use getAttribute method</li>
+        <li>to setAttribute you use this method to set an attibute on an element</li>
+        <li>firstInput.setAttribute("type", "email")//"text"</li>
+    </ul>
+    <p>If there's multiple classes it erases </p>
+    
+    <h3>Direct Acess Attributes</h3>
+    <ul>
+        <li>few attributes that you can directly access and modify as well instead of having to use getAttribute or setAttribute</li>
+        <li>One of thos is id</li>
+        <li>more commone one you will use is the value attribute with forms in HTML</li>
+        <li>value is very common in forms</li>
+        <li>one submit form, empty input</li>
+    </ul>
+    <p>.value of any type can be modified, read.</p>
+    
+    <h3>Manipulating Classes</h3>
+    <ul>
+        <li>it's annoying to update styles one property at a time</li>
+        <li>we have a few ways to manipulate the class attribute like setAttribute("class")-this will override the class.</li>
+        <li>className will give you a string representation of the class</li>
+        <li>classList-will give you an array-like object to add, remove or toggle classes</li>
+        <li></li>
+    </ul>
+    <p>classList had different methods. .add, .remove, .toggle, .contains</p>
+
+    <h3>Creating Elements</h3>
+    <ul>
+        <li>create an HTML element, using createElement</li>
+        <li>make an empty element, so if we want to add any text, attributes or styling we will have to do that on another line</li>
+        <li>Appending Elements, you can use the append method.</li>
+        <li>Append is a method that a parent element calls and you pass in child element that you would like to place inside of parent element</li>
+        <li>prepend to put it before first child</li>
+    </ul>
+    <p></p>
+
+    <h3>Removing Elements</h3>
+    <ul>
+        <li>.removeChild is the old way to do this</li>
+        <li>ul.remove()</li>
+    </ul>
+    <p></p>
+
+    <h3>Parent/Child/Siblings</h3>
+    <ul>
+        <li>find and element and remove some or all of its children</li>
+        <li>find and element and add an element</li>
+        <li>parent element is the section, everything nested is the child</li>
+        <li>children method will give you access to children elements</li>
+        <li>.nextElementSibling, .previousElementSibling</li>
+    </ul>
+    <p></p>
+    
+    <h3>Nodes vs Elements</h3>
+    <ul>
+        <li>Everything in the DOM is a node. Not everything in the DOM is an element.</li>
+        <li>every element is a node, not every node is an element</li>
+    </ul>
+    <p></p>
+    
+    <h3>Recap</h3>
+    <ul>
+        <li>DOM allos us to use JS to find and modify elements and their attributes</li>
+        <li>We can modify text, styles and much more using the DOM</li>
+        <li>Easily modify multiple elements, we can iterate over a list of elements and change each one</li>
+        <li>Don't need to know all of the properties for DOM.</li>
+        <li>Need basics to manipulate DOM</li>
+    </ul>
+    <p></p>
+
+
+    
+
+
+<script src="manipulatingDOM.js"></script>
+</body>
+</html>

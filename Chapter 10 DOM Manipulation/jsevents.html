@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Events</title>
+    <link rel="stylesheet" href="jsevents.css">
+</head>
+<body>
+
+    <h1><bold>Goals</bold></h1>
+    <ul>
+        <li>Explain what an event is in JS</li>
+        <li>Add eventListeners and prevent default actions using JS</li>
+        <li>Access information about the event using a special object</li>
+        <li>add event listeners efficiently</li>
+        <li>Explore data attributes</li>
+    </ul>
+
+    <h3>Events Intro</h3>
+    <p><bold>What is an event?</bold>
+    DOM events are "actions" that occur as a result of something the user or the browser does.
+    We can use JS to execute code when these kinds of 'events' happen.
+    </p>
+    <ul>
+        <li>clicking on something</li>
+        <li>hovering over something with the mouse</li>
+        <li>pressing certain keys</li>
+        <li>when the DOM has loaded</li>
+        <li>when a form is submitted</li>
+    </ul>
+    <p>MDN has event reference of what can be done. Write code that listens for events. Commonly known as Event Driven Programming.</p>
+
+    <h3>Event Listeners</h3>
+    <ul>3 options
+        <li>attach the name of the function to the element in HTML</li>
+        <li>attach the name of the function to the element in JS</li>
+        <li>use addEventListener</li>
+        <li></li>
+        <li></li>
+    </ul>
+    <p>We don't use the first 2. Rarely use them in general. onclick = 'function' </p>
+
+    <h3>addEventListener</h3>
+    <ul>
+        <li>document.querySelector("h1");</li>
+        <li>h1.addEventListener("click",function(){
+            console.log("You just clicked the h1 element!")
+        })</li>
+        <li>easy to remove addEventListener</li>
+        <li>we can add as many addeventlisteners as we want on same object</li>
+    </ul>
+    <p></p>    
+    
+    <h3>Load Events</h3>
+    <ul>
+        <li>waiting for the DOM to load</li>
+        <li>can put script at bottom of body</li>
+        <li>even called DOMContentLoaded</li>
+        <li>easier to put script at bottom</li>
+        <li>it's waiting for the document to be loaded and parsed </li>
+    </ul>
+    <p></p>
+    
+    <h3>Event Object</h3>
+    <ul>
+        <li>you can pass special object in parameter while running event</li>
+        <li>target-what element is the target of the event</li>
+        <li>pageX/pageY where on the page did this event occur?</li>
+        <li>key what key was pressed that triggered event?</li>
+        <li>preventDefault() a function used to prevent the default behavior of the event</li>
+        <li></li>
+    </ul>
+    <p></p>
+    
+    <h3>Form Submissions</h3>
+    <ul>
+        <li>action"" brings you to new page. you can leave empty</li>
+        <li>event.preventDefault() keeps things on single form</li>
+        <li>usually do it for forms</li>
+        
+    </ul>
+    <p></p>
+    
+    <h3>Key Events</h3>
+    <ul>
+        <li>'keyPress',function(e)</li>
+        <li>trigger if a user would show up as an input</li>
+        <li>'keydown'</li>
+        <li>'keypress'</li>
+    </ul>
+    <p></p>
+    
+    <h3>Multiple Events</h3>
+    <ul>
+        <li>we can loop over them</li>
+    </ul>
+    <p></p>
+    
+    <h3>Event Delegation</h3>
+    <ul>
+        <li>adding the event listener when we create elements</li>
+        <li>event delegation</li>
+        <li>if we're adding 1,000,000 friends, we have the same amount of listeners</li>
+        <li>we can use event delegation instead</li>
+        <li>in example the parent element is the ul element</li>
+        <li>we can attach a single event listener on the parent or delegate element. if the event happens inside of certain child element we can access that child element using event.target</li>
+        <li>listen for the parent element</li>
+        <li>can have different outcomes for different things using this</li>
+    </ul>
+    <p></p>
+
+    <h3>Data Attributes</h3>
+    <ul>
+        <li>store meta data without showing it</li>
+        <li>custom attributes for elements</li>
+        <li>data-</li>
+        <li>read them easily in CSS and Javascript</li>
+        <li>dataset to see all attributes</li>
+    </ul>
+    <p></p>
+
+    
+    
+    <h3>Recap</h3>
+    <ul>
+        <li>We can add event listeners using addEventListener and remove them using removeEventListener</li>
+        <li>Using the event object, we can gather useful information about the target, tagName and much more</li>
+        <li>To add element metadata, we can use data attributes and read them using getAttribute or dataset</li>
+    </ul>
+    <p></p>
+
+
+    
+
+
+<script src="jsevents.js"></script>
+</body>
+</html>

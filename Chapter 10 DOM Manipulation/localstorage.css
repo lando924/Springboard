@@ -1,0 +1,44 @@
+input {
+	display : none;
+}
+div label {
+	position: relative;
+	cursor: pointer;
+	display :block;
+	width: 50px;
+	height: 30px;
+	background: #cccccc;
+	border-radius: 50px;
+	transition: 300ms linear;
+}
+
+div label:before {
+	position: absolute;
+	top: 50%;
+	left: 2px;
+	transform: translateY(-50%);
+	content: "";
+	display: block;
+	width: 25px;
+	height: 25px;
+	background: #ffffff;
+	border-radius: 50%;
+	transition: left 300ms linear;
+}
+
+div input:checked + label {
+	background: #000000;
+}
+
+div input:checked + label:before {
+	left: 23px;
+}
+
+.dark {
+    background-color: darkslateblue;
+    color: white;
+}
+
+.dark a {
+    color: lightblue;
+}

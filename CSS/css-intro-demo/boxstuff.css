@@ -1,0 +1,80 @@
+h1 {
+    background-color: lavender;
+    width: 50%;
+    font-size: 5rem;
+    border-bottom: 10px;
+    border-bottom-style: solid;
+    border-bottom-color: blue;
+    text-align: center;
+    margin: 1rem auto;
+}
+
+h2 {
+    background-color: pink;
+    width: 50%
+}
+
+#box {
+    width: 200px;
+    height: 200px;
+    background-color: magenta;
+    border-radius: 50%;
+    border: 6px solid cyan;
+}
+
+button {
+    padding:0 1em;
+    background-color: blue;
+    font-size: 2rem;
+    color: white;
+    border-radius: 10px;
+    outline: none;
+}
+
+section {
+    width: 200px;
+    border: 1px solid black;
+    padding: 1em;
+  
+}
+
+img {
+    width: 40%;
+    height: 300px;
+    border-width: 10px;
+    border-color: purple teal;
+    border-style: dashed solid dotted none;
+}
+
+#container {
+    border: 1px solid black;
+    width: 500px;
+    margin: 0 auto;
+}
+
+#container .item {
+    height: 100px;
+    border: 10px solid orangered;
+    padding: 5px;
+    margin: 50px;
+    box-sizing: content-box;
+}
+
+#container .item:hover {
+    border: 10px solid olive;
+    outline: 10px solid lightblue;
+}
+
+p {
+   font-size: 1.5em;
+   background-image: url(https://images.unsplash.com/photo-1693845886349-54208259fe49?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3028&q=80);
+   background-size: contain;
+   background-repeat: no-repeat;
+   /* background-position: center; */
+   background: blue;
+
+}
+
+a {
+    background-color: lightblue;
+}

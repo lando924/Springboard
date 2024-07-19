@@ -1,0 +1,19 @@
+/* body {
+    font-size: 10px;
+} */
+html {
+    font-size: 40px;
+}
+
+h1 {
+    font-size: 6em;
+    font-family: Arial Black;
+}
+
+h2 {
+    font-size: 3 em;
+}
+
+section {
+    font-size: 0.5em;
+}

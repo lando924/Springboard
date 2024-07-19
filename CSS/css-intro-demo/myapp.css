@@ -1,0 +1,48 @@
+/* p {
+    background-color: rgb(190, 92, 190);
+}
+
+li {
+    background-color: chartreuse;
+}
+
+li:nth-of-type(2n) {
+    background-color: darkgoldenrod;
+    font-size: 40px;
+}
+li:nth-of-type(2n):hover {
+    background-color: orangered
+} */
+/* 
+h2 {
+    color: green;
+    background-color: purple;
+} */
+
+body {
+    /* background-color: rgb(255, 164, 255); */
+    background-color: #19d7b1;
+}
+
+h1 {
+    /* background-color: rgba(255, 255, 255, .5); */
+    background-color: hsl(254, 97%, 50%);
+    color: hsl(254, 97%, 70%); 
+    text-align: center;
+    font-weight: 100;
+    letter-spacing: 20px;
+    font-size: 100px;
+}
+
+
+p {
+    font-weight: bold;
+    line-height: 2;
+    text-indent: 50%;
+
+    /* word-spacing: 40px; */
+}
+
+hi > p{
+    background-color: aqua;
+}
