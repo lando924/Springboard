@@ -1,7 +1,3 @@
-* {
-  /* box-sizing: border-box; */
-}
-
 :focus {
  /* TODO */
  outline: none;
@@ -42,9 +38,7 @@ input:active {
   /* TODO */
   font-weight: bold;
 }
-.search-container input {
- /* TODO */
-}
+
 .search-container .suggestions {
    /* TODO */
    position : absolute;
@@ -64,9 +58,7 @@ ul {
   border: 0px solid #ccc;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
-ul.has-suggestions {
-  /* TODO */
-}
+
 ul li {
   /* TODO */
   padding: 10px;

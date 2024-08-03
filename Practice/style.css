@@ -1,0 +1,88 @@
+/* * {
+    background-color: #d0cfcf;
+
+};
+
+p {
+    font-family: 'Times New Roman', Times, serif;
+};
+
+a {
+    text-decoration: none;
+};  
+
+h2 {
+    text-transform: capitalize;
+};
+
+body {
+    font-size: 16px;
+}
+
+section {
+    font-size: 1.5em;
+};
+
+h1 {
+    text-shadow: 5px 5px 2px red;
+}
+
+div {
+    height: 100px;
+    bottom: 100px;
+    align-items: center;
+
+} */
+
+body {
+    margin: 0;
+    border: 5px solid black;
+    height: 100vh;
+    position: relative;
+}
+
+.red {
+    background-color: red;
+    width: 400px;
+    height: 400px;
+    position: fixed;
+
+}
+.yellow {
+    width: 300px;
+    height: 300px;
+    background-color: yellow;
+    position: absolute;
+    
+}
+.green {
+    width: 200px;
+    height: 200px;
+    background-color: green;
+    position: absolute;
+    bottom: 0;
+    right: -200px;
+    
+}
+.blue {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    position: absolute;
+    bottom: 0;
+}
+
+/* Exercise 1
+.yellow, .green, .blue {
+    position: relative;
+    top: 50px;
+    left: 50px;
+} */
+
+/* Exercise 2 */
+
+* {
+    background-color: azure;
+    scrollbar-track-color: red;
+
+}
