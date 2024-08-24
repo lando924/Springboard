@@ -179,3 +179,4 @@ class Garage {
         return "Vehicle added!";
     }
 }
+
