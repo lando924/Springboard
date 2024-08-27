@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies!</title>
+    <link rel="stylesheet" href="movie.css">
+</head>
+<body>
+    <div>
+        <h1>Favorite Movies!</h1>
+        <form class="" id="movie-input">
+            <input type="text" name="movie" id="movie">
+            
+            <input type="number" name="rating" id="rating" min="0" max="10">
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Movie <button id="sorting-title">Sort by Title</button></th>
+                <th scope="col">Rating <button id="sorting-rating">Sort by Rating</button></th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody id="movie-table">
+
+        </tbody>
+    </table>
+
+
+
+
+
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous">
+</script>
+  
+<script src="movie.js"></script>
+</body>
+</html>
