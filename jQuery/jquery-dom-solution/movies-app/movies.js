@@ -5,8 +5,8 @@ let currentId = 0;
 let moviesList = [];
 
 $(function() {
-  // when you click the delete button, remove the closest parent tr
 
+  //Form Submission Handling
   $("#new-movie-form").on("submit", function(evt) {
     evt.preventDefault();
     let title = $("#title").val();
@@ -15,7 +15,7 @@ $(function() {
     let movieData = { title, rating, currentId };
     const HTMLtoAppend = createMovieDataHTML(movieData);
 
-    currentId++
+    currentId++ 
     moviesList.push(movieData);
 
     $("#movie-table-body").append(HTMLtoAppend);

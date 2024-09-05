@@ -45,34 +45,34 @@
 
 
 //Dog API Try/Catch, ASYNC AWAIT
-// async function getRandomDog() {
-//     const res = await axios.get('https://dog.ceo/api/breeds/images/random');
-//     console.log(res.data);
-//     const img = document.querySelector('#dog')
-//     img.src = res.data.message;
-// }
+async function getRandomDog() {
+    const res = await axios.get('https://dog.ceo/api/breeds/images/random');
+    console.log(res.data);
+    const img = document.querySelector('#dog')
+    img.src = res.data.message;
+}
 
-// async function getDogByBreed(breed) {
-//     try {
-//         const url = `https://dog.ceo/api/breed/${breed}/images/random`;
-//         const res = await axios.get(url);
-//         const img = document.querySelector('#dog');
-//         img.src = res.data.message;
-//     } catch (e) {
-//         console.log(e);
-//         alert('BREED NOT FOUND!');
-//     }
-// };
+async function getDogByBreed(breed) {
+    try {
+        const url = `https://dog.ceo/api/breed/${breed}/images/random`;
+        const res = await axios.get(url);
+        const img = document.querySelector('#dog');
+        img.src = res.data.message;
+    } catch (e) {
+        console.log(e);
+        alert('BREED NOT FOUND!');
+    }
+};3
 
-// const form = document.querySelector('#searchform');
-// const input = document.querySelector('#search');
+const form = document.querySelector('#searchform');
+const input = document.querySelector('#search');
 
-// form.addEventListener("submit", function(e) {
-//     e.preventDefault();
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
 
-//     getDogByBreed(input.value);
-//     input.value = '';
-// })
+    getDogByBreed(input.value);
+    input.value = '';
+})
 
 //Post Request with Dummy API
 // async function getUsers() {
@@ -89,54 +89,54 @@
 
 //hackorsnooze API Post Example
 
-async function getUsers(token) {
-    const res = await axios.get('https://hack-or-snooze-v3.herokuapp.com/users', {params: { token } });
-    console.log(res);
-};
-//gives us token
-async function signUp(username, password, name) {
-    try {
-        const res = await axios.post('https://hack-or-snooze-v3.herokuapp.com/signup', { 
-            user: { name, username, password } 
-        });
-        console.log('User signed up successfully:', res.data);
-    } catch (error) {
-        if (error.response && error.response.status === 409) {
-            console.log('Username already exists. Please choose a different username.');
-        } else {
-            console.log('An error occurred:', error.message);
-        }
-    }
-}
-//token back
-async function login(username, password) {
-    const res = await axios.post('https://hack-or-snooze-v3.herokuapp.com/login', {user: {username, password } })
-    console.log(res);
-    return res.data.token;
-}
+// async function getUsers(token) {
+//     const res = await axios.get('https://hack-or-snooze-v3.herokuapp.com/users', {params: { token } });
+//     console.log(res);
+// };
+// //gives us token
+// async function signUp(username, password, name) {
+//     try {
+//         const res = await axios.post('https://hack-or-snooze-v3.herokuapp.com/signup', { 
+//             user: { name, username, password } 
+//         });
+//         console.log('User signed up successfully:', res.data);
+//     } catch (error) {
+//         if (error.response && error.response.status === 409) {
+//             console.log('Username already exists. Please choose a different username.');
+//         } else {
+//             console.log('An error occurred:', error.message);
+//         }
+//     }
+// }
+// //token back
+// async function login(username, password) {
+//     const res = await axios.post('https://hack-or-snooze-v3.herokuapp.com/login', {user: {username, password } })
+//     console.log(res);
+//     return res.data.token;
+// }
 
 
-async function getUsersWithAuth() {
-    const token = await login('lando9024', 'KatyLadyBaby2024');
-    getUsers(token);
-}
+// async function getUsersWithAuth() {
+//     const token = await login('lando9024', 'KatyLadyBaby2024');
+//     getUsers(token);
+// }
 
-async function createStory() {
-    const token = await login('lando9024', 'KatyLadyBaby2024');
-    const newStory = {
-        token,
-        story: {
-            author: 'Katy',
-            title: 'Bark Bark Bark',
-            url: 'http://chickens4lyfe.com'
-        }
-    }
-    const res = await axios.post('https://hack-or-snooze-v3.herokuapp.com/stories', newStory);
-    console.log(res);
-}
+// async function createStory() {
+//     const token = await login('lando9024', 'KatyLadyBaby2024');
+//     const newStory = {
+//         token,
+//         story: {
+//             author: 'Katy',
+//             title: 'Bark Bark Bark',
+//             url: 'http://chickens4lyfe.com'
+//         }
+//     }
+//     const res = await axios.post('https://hack-or-snooze-v3.herokuapp.com/stories', newStory);
+//     console.log(res);
+// }
 
-createStory();
-// getUsersWithAuth();
-//my fake account
-// login('lando9024', 'KatyLadyBaby2024');
+// createStory();
+// // getUsersWithAuth();
+// //my fake account
+// // login('lando9024', 'KatyLadyBaby2024');
 
