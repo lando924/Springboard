@@ -5,7 +5,7 @@
 // 	price       : 12.99,
 // 	hasCaffeine : true,
 // 	quantity    : 3,
-//     brewTemp    : 180
+//  brewTemp    : 180
 // };
 
 // // const price = teaOrder.price;

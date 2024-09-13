@@ -45,34 +45,34 @@
 
 
 //Dog API Try/Catch, ASYNC AWAIT
-async function getRandomDog() {
-    const res = await axios.get('https://dog.ceo/api/breeds/images/random');
-    console.log(res.data);
-    const img = document.querySelector('#dog')
-    img.src = res.data.message;
-}
+// async function getRandomDog() {
+//     const res = await axios.get('https://dog.ceo/api/breeds/images/random');
+//     console.log(res.data);
+//     const img = document.querySelector('#dog')
+//     img.src = res.data.message;
+// }
 
-async function getDogByBreed(breed) {
-    try {
-        const url = `https://dog.ceo/api/breed/${breed}/images/random`;
-        const res = await axios.get(url);
-        const img = document.querySelector('#dog');
-        img.src = res.data.message;
-    } catch (e) {
-        console.log(e);
-        alert('BREED NOT FOUND!');
-    }
-};3
+// async function getDogByBreed(breed) {
+//     try {
+//         const url = `https://dog.ceo/api/breed/${breed}/images/random`;
+//         const res = await axios.get(url);
+//         const img = document.querySelector('#dog');
+//         img.src = res.data.message;
+//     } catch (e) {
+//         console.log(e);
+//         alert('BREED NOT FOUND!');
+//     }
+// };3
 
-const form = document.querySelector('#searchform');
-const input = document.querySelector('#search');
+// const form = document.querySelector('#searchform');
+// const input = document.querySelector('#search');
 
-form.addEventListener("submit", function(e) {
-    e.preventDefault();
+// form.addEventListener("submit", function(e) {
+//     e.preventDefault();
 
-    getDogByBreed(input.value);
-    input.value = '';
-})
+//     getDogByBreed(input.value);
+//     input.value = '';
+// })
 
 //Post Request with Dummy API
 // async function getUsers() {
@@ -140,3 +140,9 @@ form.addEventListener("submit", function(e) {
 // //my fake account
 // // login('lando9024', 'KatyLadyBaby2024');
 
+
+async function getData() {
+    const response = await axios.get('https://swapi.dev/api/planets/')
+    console.log(response)
+    console.log('Done')
+}

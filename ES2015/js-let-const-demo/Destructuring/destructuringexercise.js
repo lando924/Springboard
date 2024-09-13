@@ -74,4 +74,4 @@ const {a, b} = obj.numbers;
 
 //raceResults Function
 
-const raceResults = ([first, second, third, ...rest]) =>({first, second, third, rest});
+const raceResults = ([first, second, third, ...rest]) => ({first, second, third, rest});

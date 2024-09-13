@@ -25,7 +25,7 @@ $(function () {
             alert('Title has to be longer than 2 characters');
             return;
         }
-        if(rating < 1 || rating > 10) {
+        if (rating < 1 || rating > 10) {
             alert('Rating has to be between 1 to 10');
             return;
         }        

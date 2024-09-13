@@ -170,7 +170,7 @@ class Garage {
     };
     add(newVehicle) {
         if (!(newVehicle instanceof Vehicle)) {
-            return "Only vehicles are allwed in here!";
+            return "Only vehicles are allowed in here!";
         }
         if (this.vehicles.length >= this.capacity) {
             return "Sorry, we're full.";
