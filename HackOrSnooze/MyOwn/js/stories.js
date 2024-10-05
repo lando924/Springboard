@@ -93,6 +93,8 @@ async function newStory(evt) {
 
   getAndShowStoriesOnStart();
 
+  return newStoryInput;
+
 }
 
 $newStoryForm.on("submit", newStory);
@@ -111,10 +113,8 @@ async function toggleFavs(evt) {
     evt.target.classList.toggle('fa-regular'); // class of non-favorite
     let storyID = evt.target.parentElement.id;
     if (evt.target.classList.value.indexOf('fa-solid') !== -1) { // add to favorites
-      let user = await User.addToFavorites(currentUser, storyID);
       currentUser.favorites.push({ storyId: storyID });
     } else { // removes from favorites
-      let user = await User.deleteFromFavorites(currentUser, storyID);
       currentUser.favorites = currentUser.favorites.filter(st => st.storyId !== storyID);
     }
   } else {

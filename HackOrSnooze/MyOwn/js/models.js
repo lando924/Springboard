@@ -83,7 +83,8 @@ class StoryList {
       method: "POST",
       data: {token: `${user.loginToken}`, story: {"author": story.author, "title": story.title, "url" : story.url} }
     });
-    return story;
+    console.log(response);
+    return response.data.story; // Would require error handling
   }
 
   // remove story completely
