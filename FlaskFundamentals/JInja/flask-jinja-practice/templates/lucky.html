@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block title %}Greeter V2{% endblock %}
+{% block content %} 
+<h1>Your lucky number is: {{lucky_num}}</h1>
+
+<p>{{msg}}</p>
+ 
+{% if lucky_num == 3 %}
+    <h2>That's my lucky number!</h2>
+    <img src="https://tenor.com/view/satisfaction-uhh-kevin-owens-reassured-relaxed-gif-15742160" alt="">
+{% else %}
+    <h2>I don't like {{lucky_num}}...</h2>
+    <img src="https://tenor.com/view/michael-scott-the-office-nope-no-disapprove-gif-5418568" alt="">
+{% endif %}
+{% endblock %}
