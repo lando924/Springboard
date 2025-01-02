@@ -8,6 +8,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///sqla_intro'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ECHO'] = True
 
+app.app_context().push()
 connect_db(app)
 
 from flask_debugtoolbar import DebugToolbarExtension
