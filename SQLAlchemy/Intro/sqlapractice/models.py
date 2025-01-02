@@ -9,6 +9,7 @@ def connect_db(app):
         db.init_app(app)
         db.create_all()
 
+#git 
 #MODELS GO BELOW!
         """Pet."""
 class Pet(db.Model):
@@ -24,4 +25,3 @@ class Pet(db.Model):
                         nullable=True,
                         )
     hunger = db.Column(db.Integer, nullable=False, default=20)
-    
