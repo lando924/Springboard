@@ -18,7 +18,7 @@ class Pet(db.Model):
 
     @classmethod
     def get_by_species(cls, species):
-        cls.query.filter_by(species=species).all()
+        return cls.query.filter_by(species=species).all()
 
     @classmethod
     def get_all_hungry(cls):
