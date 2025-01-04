@@ -9,8 +9,17 @@
     <h1>All Pets</h1>
     <ul>
         {% for pet in pets %}
-        <li><a href="/{{pet.id}}">{{pet.name}}</a>{{pet.name}}</li>
+        <li><a href="/{{pet.id}}">{{pet.name}}</a></li>
         {% endfor %}
     </ul>
+
+    
+    <h2>Add a New Pet</h2>
+    <form action="/" method="POST">
+        <input type="text" name="name" placeholder="name">
+        <input type="text" name="species" placeholder="species">
+        <input type="number" name="hunger" placeholder="hunger">
+        <button>Submit New Pet</button>
+    </form>
 </body>
 </html>
