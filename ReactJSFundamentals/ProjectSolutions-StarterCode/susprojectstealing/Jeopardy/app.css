@@ -1,0 +1,54 @@
+table {
+    border-collapse: collapse;
+    border: 2px solid rgb(255, 255, 255);
+    background-color: #060ce9;
+    width: 100%;
+    table-layout: fixed;
+  }
+  
+  td {
+    border: 5px solid rgb(255, 255, 255);
+    padding: 8px 10px;
+    text-align: center;
+    color: white;
+    height: 80px;
+  }
+  
+  th {
+    border: 5px solid rgb(255, 255, 255);
+    padding: 8px 10px;
+    color: white;
+    height: 50px;
+  }
+  
+  .restart {
+    /* color: #115ff4, #060ce9, #28a200, #8d2ab5, #74119c; */
+    color: white;
+    background-color: #115ff4;
+    padding: 7px;
+    margin: 4px;
+    float: left;
+  }
+  
+  .loader {
+    float: left;
+    margin: 4px;
+    border: 10px solid #115ff4;
+    border-radius: 50%;
+    border-top: 10px solid #060ce9;
+    border-bottom: 10px solid #060ce9;
+    width: 15px;
+    height: 15px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+  }
+  
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
