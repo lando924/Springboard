@@ -50,6 +50,9 @@ def homepage():
 def add_snack():
     form = AddSnackForm()
     if form.validate_on_submit():
+        raise
+        print(form.name.data)
+        print(form.price.data)
         flash("Snack added successfully!")
         return redirect("/")
     else: 
