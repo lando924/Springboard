@@ -1,8 +1,8 @@
 from flask import Flask, request, render_template, flash, redirect, session
 from flask_debugtoolbar import DebugToolbarExtension
-from models import db, connect_db, User
+from models import db, connect_db, User, Employee, EmployeeProject, Department
 
-from forms import AddSnackForm
+from forms import AddSnackForm, NewEmployeeForm
 
 
 app = Flask(__name__)
@@ -10,7 +10,7 @@ app.env= 'development'
 app.debug = True
 
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///flask_wtforms'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///employees_db'
 app.config["SECRET_KEY"] = "oh-so-secret"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config["DEBUG_TB_INTERCEPT_REDIRECTS"] = False
@@ -30,25 +30,24 @@ connect_db(app)
 @app.route("/")
 def homepage():
     """Show homepage links."""
-    
+
     return render_template("index.html")
 
 
-# @app.route("/add", methods=["GET", "POST"])
-# def add_snack():
-#     """Snack add form; handle adding."""
+@app.route("/phones")
+def phone_list():
+    """Get list of users & dept phones.
 
-#     form = AddSnackForm()
+    This version will be a 'n+1 query' --- it will query once for all
+    users, and then for each department.
 
-#     if form.validate_on_submit():
-#         name = form.name.data
-#         price = form.price.data
-#         flash(f"Added {name} at {price}")
-#         return redirect("/add")
+    There's a way to tell SQLAlchemy to load all the data in a single query,
+    but don't worry about this for now.
+    """
 
-#     else:
-#         return render_template(
-#             "snack_add_form.html", form=form)
+    emps = Employee.query.all()
+    return render_template("phones.html", emps=emps)
+
 
 @app.route('/snacks/new', methods=["GET","POST"])
 def add_snack():
@@ -59,5 +58,24 @@ def add_snack():
         price = form.price.data
         flash(f"Created new snack: name is {name}, price is ${price}!")
         return redirect("/")
-    else: 
+    else:
+        raise
         return render_template("add_snack_form.html", form=form)
+    
+@app.route('/employees/new', methods=["GET", "POST"])
+def add_employee():
+    form = NewEmployeeForm()
+    depts = db.session.query(Department.dept_code, Department.dept_name).all() 
+    form.dept_code.choices = [(d.dept_code, f"{d.dept_code} - {d.dept_name}") for d in depts]
+
+    if form.validate_on_submit():
+        name = form.name.data
+        state = form.state.data
+        dept_code = form.dept_code.data
+
+        emp = Employee(name=name, state=state, dept_code=dept_code)
+        db.session.add(emp)
+        db.session.commit()
+        return redirect('/phones')
+    else:
+        return render_template('add_employee_form.html', form=form)
