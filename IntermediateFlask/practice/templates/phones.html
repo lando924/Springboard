@@ -29,7 +29,7 @@
   <tbody>
   {% for emp in emps %}
   <tr>
-    <td>{{ emp.name }}</td>
+    <td>{{ emp.name }} <a href="/employees/{{emp.id}}/edit">Edit</a></td>
     <td>{{ emp.dept_code }}</td>
     <td>
       {% if emp.dept %}
