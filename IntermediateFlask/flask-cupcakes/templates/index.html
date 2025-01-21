@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cupcakes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <h1>Cupcakes!</h1>
+
+    <h3>Available cupcakes:</h3>
+    <div id="cupcakes-container">
+
+    </div>
+
+    <hr id="divider">
+
+    <div>
+        <form id="new-cupcake">
+            <h3>Add a new cupcake</h3>
+            <label for="flavor">Flavor</label> <br>
+            <input type="text" name="flavor" id="flavor"> <br>
+
+            <label for="size">Size</label> <br>
+            <input type="text" name="size" id="size"> <br>
+
+            <label for="rating">Rating</label> <br>
+            <input type="text" name="rating" id="rating"> <br>
+
+            <label for="image">Link to image</label> <br>
+            <input type="text" name="image" id="image"> <br>
+
+            <button id="add-cupcake">Add cupcake!</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.js"></script>
+    <script src="/static/app.js"></script>
+</body>
+</html>
