@@ -42,7 +42,7 @@
       <ul class="list-group" id="messages">
         {% for msg in messages %}
           <li class="list-group-item">
-            <a href="/messages/{{ msg.id  }}" class="message-link"/>
+            <a href="/messages/{{ msg.id  }}" class="message-link">
             <a href="/users/{{ msg.user.id }}">
               <img src="{{ msg.user.image_url }}" alt="" class="timeline-image">
             </a>
@@ -55,9 +55,14 @@
               <button class="
                 btn 
                 btn-sm 
-                {{'btn-primary' if msg.id in likes else 'btn-secondary'}}"
+                {% if msg in g.user.liked_messages %}
+                  btn-primary
+                {% else %}
+                  btn-outline-secondary
+                {% endif %}
+                "
               >
-                <i class="fa fa-thumbs-up"></i> 
+                <i class="fa fa-star"></i> 
               </button>
             </form>
           </li>

@@ -4,7 +4,7 @@ from flask import Flask, render_template, request, flash, redirect, session, g
 from flask_debugtoolbar import DebugToolbarExtension
 from sqlalchemy.exc import IntegrityError
 
-from forms import UserAddForm, LoginForm, MessageForm
+from forms import UserAddForm, LoginForm, MessageForm, EditUserForm
 from models import db, connect_db, User, Message
 
 CURR_USER_KEY = "curr_user"
@@ -18,12 +18,15 @@ app.config['SQLALCHEMY_DATABASE_URI'] = (
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ECHO'] = False
-app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = True
+app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', "it's a secret")
 toolbar = DebugToolbarExtension(app)
 
 connect_db(app)
 
+app.app_context().push()
+
+    
 
 ##############################################################################
 # User signup/login/logout
@@ -112,8 +115,13 @@ def login():
 @app.route('/logout')
 def logout():
     """Handle logout of user."""
+    
+    do_logout()
+    flash("You have successfully logged out.", "session")
+    return redirect("/login")
 
-    # IMPLEMENT THIS
+
+    
 
 
 ##############################################################################
@@ -128,10 +136,10 @@ def list_users():
 
     search = request.args.get('q')
 
-    if not search:
-        users = User.query.all()
-    else:
+    if search:
         users = User.query.filter(User.username.like(f"%{search}%")).all()
+    else:
+        users = User.query.all()
 
     return render_template('users/index.html', users=users)
 
@@ -211,7 +219,36 @@ def stop_following(follow_id):
 def profile():
     """Update profile for current user."""
 
-    # IMPLEMENT THIS
+    if not g.user:
+        flash("Access unauthorzied", "danger")
+        return redirect("/")
+    
+    form = EditUserForm(obj=g.user)
+
+    if form.validate_on_submit():
+        if not User.authenticate(g.user.username, form.password.data):
+            flash("Invalid password", "danger")
+            return redirect("/")
+        
+        g.user.username = form.username.data
+        g.user.email = form.email.data
+        g.user.image_url = form.image_url.data or User.imag_url.default.arg
+        g.user.header_image_url = form.header_image_url.data
+        g.user.bio = form.bio.data
+
+        try:
+            db.session.commit()
+            flash("Profile Update Successful!", 'success')
+            return redirect(f"/users/{g.user.id}")
+        except IntegrityError:
+            db.session.rollback()
+            flash("Username or email already taken", "danger")
+            return redirect('/')
+
+
+    return render_template('users/edit.html', form=form, user_id=g.user.id)
+
+    
 
 
 @app.route('/users/delete', methods=["POST"])
@@ -229,6 +266,38 @@ def delete_user():
 
     return redirect("/signup")
 
+
+##############################################################################
+# Warble routes:
+
+@app.route('/users/add_like/<int:message_id>', methods=["POST"])
+def add_like(message_id):
+    """like/unlike a warble"""
+
+    if not g.user:
+        flash("You must be logged in to like messages!", "danger")
+        return redirect("/")
+    
+    message = Message.query.get_or_404(message_id)
+
+    if message.user_id == g.user.id:
+        flash("You cannot like your own warble...", "danger")
+        return redirect("/")
+    
+    if message in g.user.liked_messages:
+        g.user.liked_messages.remove(message)
+    else:
+        g.user.liked_messages.append(message)
+
+    db.session.commit()
+    return redirect(request.referrer or "/")
+
+@app.route('/users/<int:user_id>/likes')
+def show_likes(user_id):
+    """Show list of messages a user has liked."""
+
+    user = User.query.get_or_404(user_id)
+    return render_template('/users/likes.html', user=user, messages=user.liked_messages)
 
 ##############################################################################
 # Messages routes:
@@ -292,8 +361,12 @@ def homepage():
     """
 
     if g.user:
+        followed_user_ids = {u.id for u in g.user.following}
+        followed_user_ids.add(g.user.id)
+
         messages = (Message
                     .query
+                    .filter(Message.user_id.in_(followed_user_ids))
                     .order_by(Message.timestamp.desc())
                     .limit(100)
                     .all())

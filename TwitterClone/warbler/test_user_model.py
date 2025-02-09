@@ -35,6 +35,9 @@ class UserModelTestCase(TestCase):
     def setUp(self):
         """Create test client, add sample data."""
 
+        db.drop_all()
+        db.create_all()
+
         User.query.delete()
         Message.query.delete()
         Follows.query.delete()
@@ -56,3 +59,6 @@ class UserModelTestCase(TestCase):
         # User should have no messages & no followers
         self.assertEqual(len(u.messages), 0)
         self.assertEqual(len(u.followers), 0)
+
+if __name__ == "__main__":
+    unittest.main()

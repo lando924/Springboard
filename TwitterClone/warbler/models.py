@@ -39,13 +39,14 @@ class Likes(db.Model):
 
     user_id = db.Column(
         db.Integer,
-        db.ForeignKey('users.id', ondelete='cascade')
+        db.ForeignKey('users.id', ondelete='cascade'),
+        primary_key=True
     )
 
     message_id = db.Column(
         db.Integer,
         db.ForeignKey('messages.id', ondelete='cascade'),
-        unique=True
+        primary_key=True
     )
 
 
@@ -113,6 +114,12 @@ class User(db.Model):
     likes = db.relationship(
         'Message',
         secondary="likes"
+    )
+
+    liked_messages = db.relationship(
+        'Message',
+        secondary="likes",
+        backref="liked_by"
     )
 
     def __repr__(self):
@@ -198,6 +205,7 @@ class Message(db.Model):
     )
 
     user = db.relationship('User')
+
 
 
 def connect_db(app):
