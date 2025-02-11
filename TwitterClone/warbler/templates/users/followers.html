@@ -4,33 +4,33 @@
   <div class="col-sm-9">
     <div class="row">
 
-      {% for follower in user.followers %}
+      {% for followed_user in user.following %}
 
         <div class="col-lg-4 col-md-6 col-12">
           <div class="card user-card">
             <div class="card-inner">
               <div class="image-wrapper">
-                <img src="{{ follower.header_image_url }}" alt="" class="card-hero">
+                <img src="{{ followed_user.header_image_url }}" alt="" class="card-hero">
               </div>
               <div class="card-contents">
                 <a href="/users/{{ follower.id }}" class="card-link">
-                  <img src="{{ follower.image_url }}" alt="Image for {{ follower.username }}" class="card-image">
-                  <p>@{{ follower.username }}</p>
+                  <img src="{{ followed_user.image_url }}" alt="Image for {{ followed_user.username }}" class="card-image">
+                  <p>@{{ followed_user.username }}</p>
                 </a>
 
                 {% if g.user.is_following(follower) %}
                   <form method="POST"
-                        action="/users/stop-following/{{ follower.id }}">
+                        action="/users/stop-following/{{ followed_user.id }}">
                     <button class="btn btn-primary btn-sm">Unfollow</button>
                   </form>
                 {% else %}
-                  <form method="POST" action="/users/follow/{{ follower.id }}">
+                  <form method="POST" action="/users/follow/{{ followed_user.id }}">
                     <button class="btn btn-outline-primary btn-sm">Follow</button>
                   </form>
                 {% endif %}
 
               </div>
-              <p class="card-bio">{{ follower.bio or 'No bio available.'}}</p>
+              <p class="card-bio">{{ followed_user.bio or 'No bio available.'}}</p>
             </div>
           </div>
         </div>
